@@ -1,2 +1,3 @@
-# exercism_elixir
-Solutions to Exercism challenges written in Elixir
+# Exercism Elixir
+
+Solutions to the [Exercism](http://exercism.io/) Elixir challenges
