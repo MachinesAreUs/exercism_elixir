@@ -20,14 +20,6 @@ defmodule DNA do
     end
   end
 
-  defp nucleotide?(n) do
-    Enum.find(@nucleotides, &(&1 == n))
-  end
-  
-  defp valid_strand?(strand) do
-    Enum.all?(strand, &nucleotide?(&1))
-  end
-
   @doc """
   Returns a summary of counts by nucleotide.
 
@@ -42,5 +34,13 @@ defmodule DNA do
     Enum.reduce strand, %{?A => 0, ?C => 0, ?G => 0, ?T => 0}, fn(x, count) ->
       Map.put count, x, ((count[x] || 0) + 1)
     end
+  end
+
+  defp nucleotide?(n) do
+    Enum.find(@nucleotides, &(&1 == n))
+  end
+  
+  defp valid_strand?(strand) do
+    Enum.all?(strand, &nucleotide?(&1))
   end
 end
