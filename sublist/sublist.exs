@@ -25,8 +25,7 @@ defmodule Sublist do
   defp sublist_from_idx?(a, b, b_idx) do
     b_rem = Enum.drop(b, b_idx)
     length(b_rem) >= length(a) 
-      and 
-    Enum.zip(a, b_rem) |> Enum.all?(fn({x,y}) -> x === y end)
+      and Enum.zip(a, b_rem) |> Enum.all?(fn({x,y}) -> x === y end)
   end
 
   defp not_empty?(l), do: not Enum.empty?(l)
