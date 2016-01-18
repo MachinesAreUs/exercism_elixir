@@ -21,6 +21,6 @@ defmodule SpaceAge do
   """
   @spec age_on(planet, pos_integer) :: float
   def age_on(planet, seconds) do 
-    seconds / (@earth_year_in_seconds * @relative_period[planet])
+    seconds / @earth_year_in_seconds / @relative_period[planet]
   end
 end
