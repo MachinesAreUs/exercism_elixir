@@ -7,6 +7,7 @@ defmodule SpaceAge do
   @relative_period %{
     mercury: 0.2408467,
     venus:   0.61519726,
+    earth:   1.0,
     mars:    1.8808158,
     jupiter: 11.862615,
     saturn:  29.447498,
@@ -19,6 +20,7 @@ defmodule SpaceAge do
   aged on 'planet'.
   """
   @spec age_on(planet, pos_integer) :: float
-  def age_on(:earth, seconds), do: seconds / @earth_year_in_seconds 
-  def age_on(planet, seconds), do: seconds / (@earth_year_in_seconds * @relative_period[planet])
+  def age_on(planet, seconds) do 
+    seconds / (@earth_year_in_seconds * @relative_period[planet])
+  end
 end
